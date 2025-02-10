@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+  <style>
+    body{
+        background-color:white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 200px;
+    }
+    
+    #box{
+            background-color: wheat;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+    }
+    #input{
+    align-items: center;
+    justify-content: center;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    }
+    label{
+        font-weight: bold;
+        display: block;
+    }
+    input{
+            width: 100%;
+            padding: 5px;       
+    }
+    h2{
+        background-color: black;
+        color: white;
+        width: 100%;
+        padding: 5px;
+        
+    }
+    h2:hover{
+        background-color: grey;
+       
+    }
+    a{
+        text-decoration: none;
+    }
+    
+    
+  </style>
+</head>
+<body>
+    <form>
+        <div id="box">
+            <div id="input">
+                <label class="user">Username</label>
+                <input type="text" id="username">
+            </div>
+            <div id="input">
+                <label>email</label>
+                <input type="text" id="email">
+            </div>
+            <div id="input">
+                <label>password</label>
+                <input type="text" id="password">
+            </div>
+            <div id="input">
+                <label>confirmPassword</label>
+                <input type="password" id="cpassword">
+            </div>
+           <center><button onclick="validate()">Submit</button></center> 
+      </div>
+    </form>
+
+    <script>
+        function validate(){
+            var username= document.getElementById("username").value;
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+            var cPassword=document.getElementById("cpassword").value;
+           var valid=true;
+
+           if(username==""){
+            alert("Enter The Username");
+            valid=false;
+           }
+           if(email==""){
+            alert("Enter The Email");
+            valid=false;
+           }
+           if(password==""){
+            alert("Enter The Password");
+            valid=false;
+           }
+           else if(password.length<6){
+            alert("Password must be more than 6 characters");
+            valid=false;
+           }
+           if(cPassword==""){
+            alert("Enter The Confirm Password");
+            valid=false;
+           }
+           
+           else if (cPassword !== password) {
+        alert("Passwords do not match");
+        valid=false;
+    }
+            if(valid){
+                alert("Form completed successfully")
+            }
+    
+    
+}
+
+    </script>
+</body>
+</html>
